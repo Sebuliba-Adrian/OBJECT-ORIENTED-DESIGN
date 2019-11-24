@@ -1,5 +1,5 @@
 
-public class Car {
+public abstract class Car {
     // instance variables - replace the example below with your own
     protected int odometer;
     protected double gallonsOfGas;
@@ -45,6 +45,8 @@ public class Car {
     @Override
     public String toString() {
         return "Car [gallonsOfGas=" + gallonsOfGas + ", milesPerGallon=" + milesPerGallon + ", odometer=" + odometer
-                + "]" + getModel(); // getModel() is a a method defined in the sub class. It can not be accessed here. It is not visible to the super class. And it is only the Neon that has this method
+                + "]" + getModel(); // getModel() is a a method from subclass can now be accessed in parent class since it is abstract
     }
+
+    public abstract String getModel(); // ever abstract method must belong to an abstact class
 }
