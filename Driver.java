@@ -22,12 +22,14 @@ public class Driver {
     }
 
     private static void promptUser() {
+        String[] carChoices = new String[4];
+        carChoices[0] = "Neon";
+        carChoices[1] = "Cavalier";
+        carChoices[2] = "Prius";
+        carChoices[4] = "Insight";
 
         do {
-            String[] carChoices = new String[3];
-            carChoices[0] = "Neon";
-            carChoices[1] = "Cavalier";
-            carChoices[2] = "Prius";
+           
             Object objSelectectedCar = JOptionPane.showInputDialog(null, "Select a car from the option below", "Select a Car Type", JOptionPane.QUESTION_MESSAGE, null, carChoices, carChoices[0]);
             String strSelectedCar = objSelectectedCar.toString();
 
@@ -43,6 +45,18 @@ public class Driver {
             final String strMilesPerGallon = JOptionPane.showInputDialog("How many miles per gallon ?");
             final int dblMilesPerGallon = Integer.parseInt(strMilesPerGallon);
             myCar.setMilesPerGallon(dblMilesPerGallon);
+
+            if(myCar instanceof Hybrid) {
+
+                Hybrid myHybrid = (Hybrid) myCar;
+                String strBatteryLevel = JOptionPane.showInputDialog("What is the battery level?");
+                int intBatteryLevel = Integer.parseInt(strBatteryLevel);
+                myHybrid.setBatteryLevel(intBatteryLevel);
+
+                String strMpmah = JOptionPane.showInputDialog("What is the miles per mah?");
+                int intMpmah = Integer.parseInt(strMpmah);
+                myHybrid.setMpmah(intMpmah);
+            }
 
             allCars.add(myCar);
 
@@ -73,6 +87,8 @@ public class Driver {
         returnCar = new Neon();
      } else if(carType.equalsIgnoreCase("Prius")) {
         returnCar = new Prius();
+     } else if(carType.equalsIgnoreCase("Insight")) {
+        returnCar = new Insight();
      }
      return returnCar;
 

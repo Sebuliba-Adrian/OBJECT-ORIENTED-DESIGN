@@ -1,4 +1,4 @@
-public class Prius extends Car {
+public class Prius extends Car implements Hybrid {
 
     protected int mpmah = 10;
     protected int batteryLevel = 100;
@@ -18,4 +18,10 @@ public class Prius extends Car {
     public void setBatteryLevel(int batteryLevel) {
         this.batteryLevel = batteryLevel;
     }
+    
+    public String getModel() {
+
+        return "Prius";
+    }
+
 }

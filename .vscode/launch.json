@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Driver",
+            "request": "launch",
+            "mainClass": "Driver"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - QuickStart",
+            "request": "launch",
+            "mainClass": "QuickStart"
+        }
+    ]
+}
