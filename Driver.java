@@ -44,18 +44,20 @@ public class Driver {
             allCars.add(myCar);
 
         } while (JOptionPane.showConfirmDialog(null, "What is the odometer reading?", "more cars?",
-                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
-
-    }
-
-    private static void printCars() {
-        for (final Car car : allCars) {
-
-            System.out.print("Car before running " + car.toString());
-            car.go(100);
-            System.out.print("Car before running " + car.toString());
-
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
+            }
             
+ public static void printCars() {
+
+        for (Car car : allCars) {
+
+            System.out.println("Car before running " + car.toString());
+            car.go(100);
+            System.out.println("Car before running " + car.toString());
+
         }
     }
+
+
 }
+
