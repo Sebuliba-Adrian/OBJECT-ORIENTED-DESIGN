@@ -3,7 +3,7 @@
  */
 public class Insight extends Car implements Hybrid {
  private int mpmah;
- private int batteryevel;
+ private int batteryLevel;
 
     public int getMpmah() {
         return mpmah;
@@ -13,12 +13,17 @@ public class Insight extends Car implements Hybrid {
         this.mpmah = mpmah;
     }
 
-    public int getBatteryevel() {
-        return batteryevel;
+    public int getBatteryLevel() {
+        return batteryLevel;
     }
 
-    public void setBatteryevel(int batteryevel) {
-        this.batteryevel = batteryevel;
+    public void setBatteryLevel(int batteryLevel) {
+        this.batteryLevel = batteryLevel;
+    }
+
+    public String getModel() {
+
+        return "Toyota Insight";
     }
     
 }

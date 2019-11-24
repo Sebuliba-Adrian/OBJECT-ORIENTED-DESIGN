@@ -26,11 +26,12 @@ public class Driver {
         carChoices[0] = "Neon";
         carChoices[1] = "Cavalier";
         carChoices[2] = "Prius";
-        carChoices[4] = "Insight";
+        carChoices[3] = "Insight";
 
         do {
-           
-            Object objSelectectedCar = JOptionPane.showInputDialog(null, "Select a car from the option below", "Select a Car Type", JOptionPane.QUESTION_MESSAGE, null, carChoices, carChoices[0]);
+
+            Object objSelectectedCar = JOptionPane.showInputDialog(null, "Select a car from the option below",
+                    "Select a Car Type", JOptionPane.QUESTION_MESSAGE, null, carChoices, carChoices[0]);
             String strSelectedCar = objSelectectedCar.toString();
 
             final Car myCar = createCar(strSelectedCar);
@@ -46,7 +47,7 @@ public class Driver {
             final int dblMilesPerGallon = Integer.parseInt(strMilesPerGallon);
             myCar.setMilesPerGallon(dblMilesPerGallon);
 
-            if(myCar instanceof Hybrid) {
+            if (myCar instanceof Hybrid) {
 
                 Hybrid myHybrid = (Hybrid) myCar;
                 String strBatteryLevel = JOptionPane.showInputDialog("What is the battery level?");
@@ -63,7 +64,7 @@ public class Driver {
         } while (JOptionPane.showConfirmDialog(null, "What is the odometer reading?", "more cars?",
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
     }
-            
+
     public static void printCars() {
         for (Car car : allCars) {
 
@@ -73,7 +74,7 @@ public class Driver {
 
         }
     }
-    
+
     /**
      * A factory method to return cars
      * @param carType
@@ -94,3 +95,25 @@ public class Driver {
 
     }
 }
+
+    
+
+
+
+    
+
+     
+     * 
+         
+            
+         
+            
+         
+            
+        
+        
+
+ 
+
+
+
