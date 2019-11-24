@@ -1,4 +1,4 @@
-public class Prius {
+public class Prius extends Car {
 
     protected int mpmah = 10;
     protected int batteryLevel = 100;

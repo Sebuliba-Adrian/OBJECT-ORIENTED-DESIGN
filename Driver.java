@@ -15,9 +15,6 @@ public class Driver {
     /**
      * Constructor for objects of class Driver
      */
-    public Driver() {
-
-    }
 
     public static void main(final String[] args) {
         promptUser();
@@ -27,8 +24,14 @@ public class Driver {
     private static void promptUser() {
 
         do {
+            String[] carChoices = new String[3];
+            carChoices[0] = "Neon";
+            carChoices[1] = "Cavalier";
+            carChoices[2] = "Prius";
+            Object objSelectectedCar = JOptionPane.showInputDialog(null, "Select a car from the option below", "Select a Car Type", JOptionPane.QUESTION_MESSAGE, null, carChoices, carChoices[0]);
+            String strSelectedCar = objSelectectedCar.toString();
 
-            final Neon myCar = new Neon();
+            final Car myCar = createCar(strSelectedCar);
             final String strOdometer = JOptionPane.showInputDialog("What is the odometer reading?");
             final int intOdometer = Integer.parseInt(strOdometer);
             myCar.setOdometer(intOdometer);
@@ -44,11 +47,10 @@ public class Driver {
             allCars.add(myCar);
 
         } while (JOptionPane.showConfirmDialog(null, "What is the odometer reading?", "more cars?",
-                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
-            }
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
+    }
             
- public static void printCars() {
-
+    public static void printCars() {
         for (Car car : allCars) {
 
             System.out.println("Car before running " + car.toString());
@@ -57,7 +59,22 @@ public class Driver {
 
         }
     }
+    
+    /**
+     * A factory method to return cars
+     * @param carType
+     * @return
+     */
+    public static Car createCar(String carType) {
+        Car returnCar = null;
+     if(carType.equalsIgnoreCase("Cavalier")) {     
+        returnCar = new Cavalier();
+     } else if(carType.equalsIgnoreCase("Neon")) {
+        returnCar = new Neon();
+     } else if(carType.equalsIgnoreCase("Prius")) {
+        returnCar = new Prius();
+     }
+     return returnCar;
 
-
+    }
 }
-
