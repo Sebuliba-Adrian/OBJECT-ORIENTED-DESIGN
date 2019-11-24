@@ -45,6 +45,6 @@ public class Car {
     @Override
     public String toString() {
         return "Car [gallonsOfGas=" + gallonsOfGas + ", milesPerGallon=" + milesPerGallon + ", odometer=" + odometer
-                + "]";
+                + "]" + getModel(); // getModel() is a a method defined in the sub class. It can not be accessed here. It is not visible to the super class. And it is only the Neon that has this method
     }
 }
